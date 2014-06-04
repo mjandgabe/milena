@@ -14,7 +14,7 @@ class Lwy{
 	*/
 	public function menu(){
 		echo"<div id='menu'>";
-		echo "<span class='el_menu'><a href='index.php'>Strona Główna</a></span>";
+		echo "<span class='el_menu'><a href='index.php'>Strona Glowna</a></span>";
 		echo "<span class='el_menu'><a href='index.php?page=dodaj'>Dodaj Lwa</a></span>";
 		echo "<span class='el_menu'><a href='index.php?page=zobacz'>Zobacz Lwy</a></span>";
 		echo "</div>";
@@ -72,7 +72,7 @@ class Lwy{
 
 		<!-- Stopka na dole strony -->
 		<div id='stopka'>
-			Wykonała: Władzia Milena Topka
+			Wykonala: Władzia Milena Topka
 		</div>
 	</body>
 </html>

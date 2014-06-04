@@ -19,7 +19,7 @@
 		* Wyswietlenie wszytskich lwow
 		*/
 		else if($_GET['page'] == 'zobacz'){
-			echo "<h2>Wszytskie Lwy</h2>";
+			echo "<h2>Wszystkie Lwy</h2>";
 			if($sukces == 1){
 
 					/**
