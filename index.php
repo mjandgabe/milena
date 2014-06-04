@@ -59,6 +59,9 @@ class Lwy{
 		<?php
 			$lew = new Lwy;
 			$lew->menu();
+		?>
+		<h1>Biale Lwy ;-)</h1>
+		<?
 			$lew->zadania();
 		?>
 
