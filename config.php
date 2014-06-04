@@ -10,7 +10,7 @@
 	// dane do polaczenie
 	$host = "localhost"; 
 	$user = "midaspro_milena"; 
-	$pass = "********"; 
+	$pass = "*****"; 
 	$db = "midaspro_milena";
 	$port = '5432';
 ?>

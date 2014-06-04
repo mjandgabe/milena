@@ -2,3 +2,62 @@
 * style.php 
 * wyglad strony
 ******************************************************/
+body{
+	background-image: url(img/background.jpg);
+}
+
+#menu{
+	text-align: center;
+	border-style: outset;
+	padding: 1%;
+}
+
+.el_menu{
+	border: outset #ccc;
+	padding: 5px;
+}
+
+.el_menu :hover{
+	border-style: inset;
+	background: white;
+}
+
+#menu :link{ 
+	color: red;
+	text-decoration: none; 
+}
+
+#menu :visited { 
+	color: maroon;
+	border-color: white;
+}
+
+#stopka{
+	text-align: center;
+ 	position:fixed;
+ 	bottom:0;
+ 	width: 90%;
+}
+
+#lew img{
+	height: 300px;
+	padding-top: 20px;
+}
+
+#lew{
+	text-align: center;
+}
+
+.buttons{
+	height: 15px;	
+}
+
+table { 
+	width: 500px; 
+	margin: 0 auto; 
+	text-align: left; 
+}
+
+form, h2{
+		text-align: center;
+}

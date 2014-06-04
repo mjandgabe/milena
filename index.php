@@ -1,4 +1,9 @@
 <?
+/******************************************************
+* index.php 
+* Glowny plik strony www
+******************************************************/
+
 /**
 * Glowan klasa projektu - Lwy
 */
@@ -8,9 +13,11 @@ class Lwy{
 	* Generowanie Menu
 	*/
 	public function menu(){
-		echo"<div id='menu'><ul>";
-		echo "<li><a href='index.php?page=dodaj'>Dodaj Lwa</a></li><li><a href='index.php?page=zobacz'>Zobacz Lwy</a></li>";
-		echo "</ul></div>";
+		echo"<div id='menu'>";
+		echo "<span class='el_menu'><a href='index.php'>Strona Główna</a></span>";
+		echo "<span class='el_menu'><a href='index.php?page=dodaj'>Dodaj Lwa</a></span>";
+		echo "<span class='el_menu'><a href='index.php?page=zobacz'>Zobacz Lwy</a></span>";
+		echo "</div>";
 	}
 	
 	/**
@@ -19,62 +26,11 @@ class Lwy{
 	public function zadania(){
 		include ("config.php");
 		require('polaczenie.php');
-
 		/**
-		* Pola do dodania lwa
+		* PLik opisujacy ma ma sie dziac zaleznie od adresu
 		*/
-		if($_GET['page'] == 'dodaj'){
-			echo "<h2>Dodaj Lwa</h2>";
-			echo "<form method='post' action='index.php?page=dodaje'>";
-			echo "<br />Imie: <input type='text' name = 'imie' value='$imie' /><br />";
-			echo "Wiek: <input type='text' name = 'wiek' value='$wiek' /><br />";
-			echo "Cena: <input type='text' name = 'cena' value='$cena' /><br />";
-			echo "<input type='submit' value='dodaj' /></form>";	
-		}
+		include ("zadania.php");
 
-		/**
-		* Wyswietlenie wszytskich lwow
-		*/
-		else if($_GET['page'] == 'zobacz'){
-			echo "<h2>Wszytskie Lwy</h2>";
-			if($sukces == 1){
-					$stmt = $pdo -> query('SELECT * FROM lwy;');
-					echo "<table><tr><td>Imie</td><td>Wiek</td><td>Cena</td><td>Edytuj</td><td>Usun</td></tr>";
-					foreach($stmt as $kolumna){
-						$imie=$kolumna['imie'];
-						$wiek=$kolumna['wiek'];
-						$cena=$kolumna['cena'];
-						echo "<tr>";
-						echo "<td>$imie</td>";
-						echo "<td>$wiek</td>";
-						echo "<td>$cena</td>";
-						echo "<td></td>";
-						echo "<td></td>";
-						echo "</tr>";
-					}
-					$stmt->closeCursor();	
-			}
-			else{
-				echo "Blad polaczenia z baza";
-			}
-		}
-
-		/**
-		* Wpisanie lwa do bazy
-		*/
-		else if($_GET['page'] == 'dodaje'){
-			$imie = $_POST['imie'];
-			$wiek = $_POST['wiek'];
-			$cena = $_POST['cena'];
-			if($sukces == 1){
-				$stmt = $pdo -> query('INSERT INTO lwy (imie, wiek, cena) VALUES (\''.$imie.'\',\''.$wiek.'\',\''.$cena.'\')');   
-				$stmt->closeCursor();
-				echo "Lew dodany";
-			}
-			else{
-				echo "Blad polaczenia z baza";
-			}
-		}		
 	}
 }
 ?>
@@ -105,5 +61,15 @@ class Lwy{
 			$lew->menu();
 			$lew->zadania();
 		?>
+
+		<!-- Obrazek lwa -->
+		<div id='lew'>
+			<img src="img/lew.png" alt="lew">
+		</div>
+
+		<!-- Stopka na dole strony -->
+		<div id='stopka'>
+			Wykonała: Władzia Milena Topka
+		</div>
 	</body>
 </html>
